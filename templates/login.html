@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="co1">
+            <div class="container">
+                <div class="shadow-lg p-3 mb-5 bg-white rounded container">
+
+                    <tr>
+                        <td align="center"><h3>Login</h3></td>
+                    </tr>
+                    <br>
+
+                    {% for message in messages %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h6>Username</h6>
+                        <input class="form-control" type="text" name="username" placeholder="  username"
+                               style="height: 45px;font-weight: bold"><br>
+                        <h6>Password</h6>
+                        <input type="password" class="form-control" name="password" placeholder="  password"
+                               style="height: 45px;font-weight: bold"><br>
+                        <input type="Submit" class="btn btn-outline-dark">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="co1-2">
+            <div class="container">
+
+                <div class="shadow-lg p-3 mb-5 bg-white rounded container">
+
+                    <h1>注意 感謝你的注意</h1>
+                    <h3>帳號是 bloodnighttwIsSoHandsome</h3>
+                    <h3>密碼是 bloodnighttwIsSoHandsome</h3>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block backgroundUrl %}
+https://wallpaperplay.com/walls/full/a/e/6/33398.jpg
+{% endblock %}
