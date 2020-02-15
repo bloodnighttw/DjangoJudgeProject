@@ -11,13 +11,12 @@ def index(request):
     global ad
     ad = ad + 1
     print(str(ad))
-    return render(request, "extend.html", {"content": str(ad)})
+    return render(request, "index.html", {"content": str(ad)})
 
 
 def register(request):
     if request.user.is_authenticated:
         return redirect('/index')
-
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -33,8 +32,6 @@ def register(request):
 def login(request):
     if request.user.is_authenticated:
         return redirect('/index')
-
-    print("bang")
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
