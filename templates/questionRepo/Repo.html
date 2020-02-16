@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container row row-cols-1 row-cols-md-4">
+	{% for rp in repo.questions %}
+		<div class=" col mb-4">
+			<div class="card border-success col btn-outline-light" style="max-width: 18rem;">
+				<div class="container">
+				  <div class="card-body text-dark">
+				    <h5 class="card-title ">{{rp.title }}</h5>
+				    <p class="card-text ">難易度:</p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+{% endblock %}

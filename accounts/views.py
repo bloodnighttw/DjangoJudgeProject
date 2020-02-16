@@ -2,31 +2,24 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.models import auth, User
-
-ad = int
-ad = 0
+from .models import form_with_email
 
 
-def index(request):
-    global ad
-    ad = ad + 1
-    print(str(ad))
-    return render(request, "index.html", {"content": str(ad)})
-
+# Create your views here.
 
 def register(request):
     if request.user.is_authenticated:
         return redirect('/index')
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = form_with_email(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
+            print("sssssssssssssssssssssss")
             return redirect('/index')
-    else:
-        form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+        else:
+            print("bang")
+    form = form_with_email()
+    return render(request, 'accounts/signup.html', {'form': form})
 
 
 def login(request):
@@ -46,7 +39,7 @@ def login(request):
             return redirect("/login")
     else:
         print("bangssss")
-        return render(request, 'login.html')
+        return render(request, 'accounts/login.html')
 
 
 def logout(request):

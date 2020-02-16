@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 
-
-{% for message in messages %}
-    <div class="alert alert-danger" role="alert">
-        {{ message }}
-    </div>
-{% endfor %}
+{% block content %}
+	<div class="container row row-cols-1 row-cols-md-3"> 
+		{% for repos in repo %}
+		<div class=" col mb-4">
+			<div class="container ">
+				<a href="/{{ repos.id }}" class="card border-warning col btn-outline-light" style="max-width: 18rem;max-height: 8rem;min-height: 8rem;min-width: 18rem ">
+				  	<div class="card-body text-dark ">
+				    <h5 class="card-title">{{ repos.name }}</h5>
+				    <p class="card-text"> {{repos.description}}</p>
+				  </div>
+				</a>
+			</div>
+		</div>
+		{% endfor%}
+	</div>
+{% endblock %}
