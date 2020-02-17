@@ -15,6 +15,6 @@ def question(request,id,title):
 		if repo.get('id') == id:
 			for q in  repo.get('questions'):
 				if q.get('title') == title :
-					return render(request , 'questionRepo/question.html',{'question':q})
+					return render(request , 'questionRepo/question.html',{'question':q,'i':int(0)})
 	return redirect('/index')
 

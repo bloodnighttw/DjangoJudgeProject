@@ -1,6 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
+	<div class="shadow-lg p-3 mb-5 bg-white rounded container">
+		<div class="container">
+			<h1>{{question.title}}</h1>
 
-    {{ question.title }}
+
+		<hr></hr>
+		<br>
+		
+		{% for content in question.content%}
+		<p>{{content}}</p>
+		{% endfor%}
+
+		
+
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">input</th>
+		      <th scope="col">output</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	
+		  	{% for io in question.visibleIO %}
+		    <tr>
+	    	  <th> {{forloop.counter | add:0}}</th>
+		      <td style="white-space: pre-line;">{{ io.input }}</td>
+		      <td style="white-space: pre-line;">{{ io.output }}</td>
+		      
+		    </tr>
+		    
+		    {% endfor %}
+		    
+		    
+		  </tbody>
+		</table>
+
+		</div>
+	</div>
 {%  endblock %}

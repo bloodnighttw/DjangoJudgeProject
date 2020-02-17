@@ -22,14 +22,14 @@ q1Test1 = {
 }
 
 q1Test2 = {
-	'title':"test02",
+	'title':"[T401]數學問題",
 	'content':[
 		"Just Test ",
 		"test line2"
 	],
 	'visibleIO':[
 		{
-			'input':"input1",
+			'input':"input1 \n sss",
 			'output':"output2"
 		},
 		{
