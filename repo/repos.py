@@ -7,12 +7,14 @@ q1Test1 = {
 		"Just Test ",
 		"test line2"
 	],
-	'visibleIO':[{
-		'input':"input1",
-		'output':"output2"
-		},{
-		'input':"input2",
-		'output':"output2"
+	'visibleIO':[
+		{
+			'input':"input1",
+			'output':"output2"
+		},
+		{
+			'input':"input2",
+			'output':"output2"
 		}
 	],
 	'HidenIO':[
@@ -25,12 +27,14 @@ q1Test2 = {
 		"Just Test ",
 		"test line2"
 	],
-	'visibleIO':[{
-		'input':"input1",
-		'output':"output2"
-		},{
-		'input':"input2",
-		'output':"output2"
+	'visibleIO':[
+		{
+			'input':"input1",
+			'output':"output2"
+		},
+		{
+			'input':"input2",
+			'output':"output2"
 		}
 	],
 	'HidenIO':[

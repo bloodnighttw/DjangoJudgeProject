@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.contrib.auth import views
 from django.urls import path
 
 from bnJudge.view import index
@@ -12,7 +11,8 @@ urlpatterns = [
     path('signup/', register, name='register'),
     path('login/', login),
     path('logout/',logout),
-    path('<str:id>/',repoViews.test),
+    path('<str:id>/',repoViews.questionRepo),
+    path('<str:id>/<str:title>',repoViews.question),
     
 
 ]
